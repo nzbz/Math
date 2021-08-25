@@ -1,0 +1,653 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>计算机access</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ :root {--mermaid-font-zoom:1.575em ;} 
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h2><a name="数据库基础" class="md-header-anchor"></a><span>数据库基础</span></h2><ol start='' ><li><h3><a name="数据" class="md-header-anchor"></a><span>数据</span></h3><p><span>数据指存储在某一媒体上能识别的</span><strong><span>物理符号</span></strong><span> .   数据 概念是两个方面 一. 描述实物特性 其二是 存储 某一种媒体的数据形式 .</span></p></li><li><h3><a name="数据处理" class="md-header-anchor"></a><span>数据处理 </span></h3><p><span>数据处理是对各种形式数据进行</span><strong><span>收集 . 存储 . 加工 和传播</span></strong><span>的总和 ,</span></p></li><li><h3><a name="数据库-database--db" class="md-header-anchor"></a><span>数据库 </span><mark><span>(</span><strong><span>Database</span></strong><span>)  </span><strong><span>DB</span></strong></mark></h3><p><span>数据库是</span><strong><span>长期</span></strong><span>存放在计算机内的、有组织的、可表现为多种形式的</span><strong><span>可共享</span></strong><span>的</span><strong><span>数据集合</span></strong><span>。</span></p></li><li><h3><a name="数据库管理系统dbms-是-数据库系统dbs的核心" class="md-header-anchor"></a><mark><span>数据库管理系统(DBMS)</span></mark><span> 是 </span><mark><span>数据库系统</span><strong><span>(DBS)</span></strong><span>的核心</span></mark></h3><p><span>是对数据库进行管理的</span><mark><strong><span>系统软件</span></strong></mark><span>，它的职能是有效地组织和存储数据，获取和管理数据，接受和完成用户提出的访问数据的各种请求。</span></p><p><span>常见的DBMS: </span><strong><span>Access、 VF、SQL Server、Oracle</span></strong><span>等 。</span></p><p><span>最早商业化的关系型数据库 Oracle</span></p><p>&nbsp;</p><ol start='5' ><li><h3><a name="数据库系统dbs" class="md-header-anchor"></a><span>数据库系统</span><mark><strong><span>(DBS)</span></strong></mark></h3></li></ol><p><span>是指数据库系统是指拥有数据库技术支持的计算机系统，它可以实现有织地、动态地存储大量相关数据，提供数据处理和信息资源共享服务。</span>
+<mark><strong><span>数据库系统=硬件系统+系统软件+数据库应用系统+各类人员</span></strong></mark><span> </span>
+<mark><strong><span>DBS包括DB和DBMS </span></strong></mark></p><ol start='6' ><li><h3><a name="数据管理技术发展" class="md-header-anchor"></a><span>数据管理技术发展</span></h3></li></ol></li></ol><p><span>数据管理技术发展经历了 </span><strong><span>人工管理 .  文件系统 .  数据库系统</span></strong><span>  三个阶段</span></p><h5><a name="人工管理阶段" class="md-header-anchor"></a><span>人工管理阶段</span></h5><p><span>		</span><span>数据</span><strong><span>不进行保存</span></strong></p><p><span>		</span><strong><span>没有</span></strong><span>专门大数据管理软件</span></p><p><span>		</span><span>数据面向应用</span></p><p><span>		</span><span>只有程序概念</span></p><h5><a name="文件系统阶段" class="md-header-anchor"></a><span>文件系统阶段</span></h5><p><span>		</span><span>数据可以</span><strong><span>长期保存</span></strong><span>在磁盘上;</span></p><p><span>		</span><span>文件系统提供了数据与程序之间的存取方法:</span>
+<span>​</span><span>		</span><span>数据</span><strong><span>冗余量大</span></strong><span>;</span>
+<span>​</span><span>		</span><span>文件之间</span><strong><span>缺乏联系，相对孤立</span></strong><span>，仍然不能反映</span></p><h5><a name="数据库系统阶段" class="md-header-anchor"></a><span>数据库系统阶段</span></h5><p><span>		</span><span>数据</span><strong><span>结构化</span></strong><span>;</span>
+<span>​</span><span>		</span><span>数据</span><strong><span>共享性好</span></strong><span>;</span>
+<span>​</span><span>		</span><span>数据</span><strong><span>独立性好</span></strong><span>;</span>
+<span>​</span><span>		</span><span>数据存储粒度小;</span>
+<span>​</span><span>		</span><span>为用户提供了友好的接口。</span></p><ol start='7' ><li><h3><a name="数据库系统组成" class="md-header-anchor"></a><span>数据库系统组成</span></h3><p><mark><strong><span>数据库系统=硬件系统+系统软件+数据库应用系统+各类人员</span></strong></mark><span> </span></p><ol start='' ><li><span>硬件系统</span>
+<span>整个数据库系统对硬件资源提出了较高的要求。</span></li><li><span>系统软件</span>
+<span>系统软件主要包括操作系统、数据库管理系统、与数据</span>
+<span>库接口的高级语言及其编译系统，以及以</span><strong><span>DBMS为核心的</span></strong>
+<strong><span>应用程序开发工具</span></strong><span>。</span></li><li><span>数据库应用系统</span>
+<strong><span>数据库应用系统是为特定应用开发的数据库应用软件</span></strong><span>。</span></li><li><span>各类人员</span>
+<span>这些人员包括数据库管理员、系统分析员、应用程序员和最终用户。</span></li></ol></li><li><h3><a name="数据模型" class="md-header-anchor"></a><span>数据模型</span></h3><ul><li><p><span>层次模型</span><span>	</span></p></li><li><p><span>网状模型</span></p></li><li><p><strong><span>关系模型</span></strong></p><p><span>	</span><span>关系模型把世界看作是由</span><mark><strong><span>实体</span></strong></mark><span>和</span><mark><strong><span>联系</span></strong></mark><span>构成的。</span></p><p><span>	</span><span>一对一。  如:班级--班长。</span>
+<span>​</span><span>	</span><span>一对多。  如:性别--人。</span>
+<span>​</span><span>	</span><span>多对多。  如:   人--课。</span></p></li></ul></li><li><h3><a name="关系数据库" class="md-header-anchor"></a><span>关系数据库</span></h3><p><span>	</span><mark><strong><span>关系</span></strong></mark><span>:一个关系就是一张</span><mark><strong><span>二维表</span></strong></mark><span>，每个关系有一一个关系名。在Access中，一个关系就是数据库文件中的一个表对象。</span>
+<span>​</span><span>	</span><mark><strong><span>属性</span></strong></mark><span>:二维表中垂直方向的</span><strong><span>列称为</span><mark><span>属性</span></mark></strong><span>，有时也叫做一个</span><strong><span>字段</span></strong>
+<span>​</span><span>	</span><strong><span>域</span></strong><span>:-一个属性的取值范围叫做一个域。</span>
+<span>​</span><span>	</span><strong><span>元组</span></strong><span>:二维表中水平方向的</span><mark><strong><span>行称为元组</span></strong></mark><span>，有时也叫做一条</span><mark><strong><span>记录</span></strong></mark><span>。</span></p><p><span>	</span><mark><strong><span>码</span></strong><span>:</span></mark><span>又称为</span><mark><strong><span>关键字</span></strong></mark><span>。二维表中的某个属性或属性组，若它的值唯一地标识了一个元组，则称该属性或属性组为候选码。若一个关系有多个候选码，则选定其中一个为主码，也称为主键(</span><strong><span>不能为空、不能重复)</span></strong>
+<span>​</span><span>	</span><span>分量:元组中的一个属性值叫做元组的一个分量。</span>
+<span>​</span><span>	</span><span>关系模式:是对关系的描述，它包括关系名、组成该关系的属性名、属性到域的映象。通常简记为:关系名(属性名1，属性名2，.... 属性名n)。</span></p></li><li><h3><a name="关系运算" class="md-header-anchor"></a><strong><span>关系运算</span></strong></h3><p><span>	</span><span>有两种:</span></p><ol start='' ><li><p><mark><strong><span>传统的集合运算</span></strong></mark><span>(并、差、交、广义笛卡儿积等);</span></p><ol start='2' ><li><mark><strong><span>专门的关系运算</span></strong></mark><span>(选择、投影、连接)。</span></li></ol><ul><li><strong><span>选择</span></strong><span>: 在关系中选择满足指定条件的</span><strong><span>元组(行)。</span></strong></li><li><strong><span>投影</span></strong><span>: 在关系中选择某些</span><strong><span>属性(列)</span></strong></li></ul></li></ol></li></ol><ol start='11' ><li><h3><a name="数据库管理系统的层次结构" class="md-header-anchor"></a><span>数据库管理系统的层次结构</span></h3><p><span>根据处理对象的不同，数据库管理系统的层次结构由</span><strong><span>高级到低级</span></strong><span>依次为</span><strong><span>应用层、语言翻译处理层、数据存取层、数据存储层、操作系统</span></strong></p><p>&nbsp;</p></li><li><h3><a name="access" class="md-header-anchor"></a><span>Access</span></h3><p><span>Access 2010关系数据库是数据库对象的集合。</span></p><p><span>数据库对象包括</span><strong><span>表、查询(第一层次</span></strong><span>)、 </span><strong><span>窗体、报表(第二层次)</span></strong><span>、</span><strong><span>宏、模块(第三层次)</span></strong><span>。</span>
+<span>Access只能</span><strong><span>打开并运行一个</span></strong><span>数据库。但是，在每一个数据库中，可以拥有众多的表、查询、窗体、报表、宏和模块。这些数据库对象都存储在同一个以</span><mark><strong><span>.accdb</span></strong></mark><span>为扩展名的数据库文件中</span></p><h5><a name="表对象" class="md-header-anchor"></a><span>表对象:</span></h5><p><span>			</span><span>1  表是有结构的数据的集合，</span><strong><span>表用于存储基本数据，是其他数据库对象的基础</span></strong><span>, 在表中数据是按行和</span><span>				</span><span>列存储的，相当于由行和列组成的二维表格。在表中，</span><strong><span>一行数据称为一条记录,一列称为一个字段</span></strong><span>。</span>
+<span>​</span><span>			</span><span>2   一个表 是由表结构和表内容构成。表有两个视图:</span>
+<span>​</span><span>				</span><span>设计视图(结构) 和 数据表视图(内容)</span></p><h5><a name="表结构" class="md-header-anchor"></a><span>表结构:</span></h5><p><span>   字段名称:  长度&lt;=64 不能包括 . !  [ ]  ’  不能空格开头</span></p><p><span>   数据类型: 12种  </span><strong><span>文本(最长255个字符)</span></strong><span>、备注(长文本)、</span><strong><span>数字、日期/时间、货币</span></strong><span>、自动编号、是/否、OLE对象(word、Excel、图片、声音等)、超链接、附件、计算、查阅向导</span></p><h5><a name="查询对象" class="md-header-anchor"></a><span>查询对象:</span></h5><p><span>		</span><span>查询主要有:</span></p><p><span>	</span><span>    </span><strong><span>(1)选择查询</span></strong><span>。选择查询是用于从表中检索数据或进行计算的查询。这也是</span><strong><span>最常用</span></strong><span>的查询类型。</span>
+<span>​</span><span>		</span><strong><span>(2)生成表查询</span></strong><span>。生成表查询就是通过查询来搜索记录，然后将这些记录保存到一个</span><strong><span>新的表</span></strong><span>中。</span>
+<span>​</span><span>	</span><span>    </span><strong><span>(3)追加查询</span></strong><span>。追加查询可以将一个数据表中的数据添加到</span><strong><span>另一个数据表</span></strong><span>中</span></p><p><span>		</span><strong><span>(4)更新查询</span></strong><span>。更新查询就是利用查询的功能批量</span><strong><span>更改</span></strong><span>记录。</span>
+<span>​</span><span>		</span><strong><span>(5)交叉表查询</span></strong><span>。交叉表查询主要用于显示某一个字段数据的统计值，比如计数、平均值等，</span>
+<span>​</span><span>		</span><strong><span>(6)删除查询</span></strong><span>。删除查询就是通过查询来搜索符合条件的记录，然后运行该查询将这些记录从原数据表中</span><span>							</span><span>删除</span></p><p><strong><span>窗体对象Form:</span></strong><span>		</span></p><p><span>			</span><span>窗体是</span><strong><span>应用程序和用户之间的接口</span></strong><span>界面，为用户查看和编辑数据库中的数据提供了一种友好的</span><strong><span>交互式</span></strong><span>界面。使用窗口的形式显示给用户，用户可以</span><strong><span>创建、修改、删除数据</span></strong></p><p><strong><span>报表(Report)对象</span></strong>
+<span>报表是以</span><mark><span>打印格式</span></mark><span>显示用户数据的一种有效方式。用户只能通过报表浏览数据，而</span><strong><span>不能编辑</span></strong><span>数据。</span></p></li><li><h3><a name="access-视图" class="md-header-anchor"></a><span> Access 视图</span></h3><p><span>查询对象有五种视图</span></p><ol start='' ><li><span>设计视图</span></li><li><span>数据表视图</span></li><li><span>SQL视图</span></li><li><span>数据透视表视图</span></li><li><span>数据透视图 视图</span></li></ol></li></ol><ol start='14' ><li><h3><a name="查询分类" class="md-header-anchor"></a><span>查询分类</span></h3><ul><li><p><span>选择查询</span></p><ol start='' ><li><span>单表查询</span></li><li><span>连接查询</span></li></ol></li><li><p><span>操作查询</span></p><p><strong><mark><em><span>操作查询</span></em><span>  包括:更新查询、生成表查询、追加查询、删除查询</span></mark></strong></p></li><li><h5><a name="sql查询" class="md-header-anchor"></a><span>SQL查询 </span></h5><p><span>	</span></p><p><span>基本格式:SELECT表名[INTO目标表]FROM表名</span>[<span>WHERE条件</span>][ ORDER BY字段]<span>[ GROUP BY字段[ HAVING条件]]</span>
+<span>(1)ORDER BY字段:按指定字段排序; asc代表的是升序，desc代表 的是降序如果不写，默认是升序(2)GROUP BY字段:按指定字段分组;</span>
+<span>(3)HAVING条件:设置分组条件;</span>
+<span>(4)INTO目标表:将查询结果输出到指定的目标表。</span>
+<span>示例:查询sd表中女同学的信息，并将查询结果</span>
+<span>输出到“女生”表。</span>
+<span>SELECT* INTO女生 FROM sd  WHERE 性别=“女”</span></p><h5><a name="update语句字段内容更新" class="md-header-anchor"></a><span> </span><span>	</span><span>UPDATE语句(字段内容更新)</span></h5><p><span>基本格式: UPDATE表名SET字段=表达式[ WHERE条件]</span>
+<span>&#39;示例:</span>
+<span>将班级编号为“201001&quot; 的记录的班级编号修改为“201010</span>
+<span>UPDATE sd  SET 班级编号=“201010”WHERE 班级编号 =“201001&quot;</span></p><h5><a name="insert语句插入记录" class="md-header-anchor"></a><span>	</span><span>INSERT语句(插入记录)</span></h5><p><span>基本格式:INSERTINTO 表名 (字段名表) VALUES (内容列表)</span>
+<span>示例:在sd表中插入一条记录。</span>
+<span>INSERT INTO sd(学号,姓名，性别,班级编号) VALUES(&quot;201001011&quot;,&quot;张山”,“女&quot;,&quot;201001&quot;)</span></p><h5><a name="delete语句删除记录" class="md-header-anchor"></a><span>	</span><span> DELETE语句(删除记录)</span></h5><p><span>基本格式: DELETE FROM表名[ WHERE条件]</span>
+<span>示例:删除sd表中班级编号为“201001”的所有记录。</span>
+<span>DELETE FROM sd WHERE 班级编号 =“201001&quot;</span></p></li></ul></li></ol><h2><a name="网页制作" class="md-header-anchor"></a><span>网页制作</span></h2><p><span>网站:是一-组相关网页和有关文件的集合,一般有一个特殊的网页作为浏览的起始点，称为主页( Homepage )用来引导用户访问其他网页。网站中的内容通常包括网页和相关的文件，一般被存储在同一个目录中。</span>
+<span>主页文件名一般为Index.htm 或 Index. html</span></p><p><span>浏览器和服务器之间通过超文本传送协议(HTTP )进行通信用户使用浏览器向Web服务器发送请求Web服务器响应用户的请求， 并使用HTTP协议将网页和有关文件传回目前常用的浏览器: 微软的IE，苹果的Safari，谷歌的Chrome , Opera的Opera</span></p><ol start='2' ><li><p><span>XML</span></p><p><span>中文名为可扩展标记语言。其</span>
+<span>主要用途是在Internet上传递或处</span>
+<span>理数据。</span>
+<span>XML文件的扩 展名为.xml。</span></p></li><li><p><span>CSS</span>
+<span>中文名为层叠样式表,主要用来对网页</span>
+<span>数据进行编排、格式化、显示、特效等。</span></p></li><li><p><span>DHTML</span>
+<span>是动态的HTML ,这种技术要求网页具</span>
+<span>备动态功能，如动态交互、动态更新等。</span></p></li><li><p>&nbsp;</p><p><span>TML简介</span>
+<span>HTML文件是一种纯文本文件,我们</span>
+<span>可以使用任何文本处理软件(如记事本)</span>
+<span>来创建或处理HTML文件。</span></p></li></ol><p><span>网页布局一般使用表格和框架来实现</span></p><p><span>	</span><span>表格 : 在页面上定位和排版</span></p><p><span>	</span><span>框架: 一个框架显示一个网页文件</span></p><p><span>	</span><span>表单:web服务器与客户交互的手段   </span><form><span>   </span></form></p><p>&nbsp;</p><h2><a name="多媒体技术" class="md-header-anchor"></a><span>多媒体技术</span></h2><h3><a name="媒体两种含义" class="md-header-anchor"></a><span> 媒体两种含义</span></h3><p><span>		</span><span>一是    指</span><strong><span>存储信息的实体</span></strong><span>，例如磁盘、磁带、光盘、半导体存储器等:</span>
+<span>		</span><span>二是    指</span><strong><span>传递信息的载体</span></strong><span>，例如声音、 图像、图形、文字等。</span></p><h3><a name="多媒体技术-n328" class="md-header-anchor"></a><span>多媒体技术</span></h3><p><span>	</span><span>多媒体技术:把数字、文字、声音、图形、图像及动画等各种媒体有机组</span><span>	</span><span>合起来，利用计算机、通信和广播技术，使它们建立逻辑联系，并能进行加工处理的技术。</span></p><h3><a name="媒体分类" class="md-header-anchor"></a><span>媒体分类</span></h3><ul><li><p><strong><span>表示媒体</span></strong><span>:   为了传送感觉媒体而人为研究出来的媒体，一般以</span><strong><span>编码</span></strong><span>的形式描述，如静止</span><strong><span>图像</span></strong></p></li><li><p><strong><span>感觉媒体</span></strong><span>:   直接作用于人的</span><strong><span>感觉器官</span></strong><span>，如声音、文字</span></p></li><li><p><strong><span>显示(呈现、表现)媒体</span></strong><span>:</span><span>	</span><span>进行信息输入和输出的媒体，如 </span><strong><span>键盘 鼠标</span></strong></p></li><li><p><strong><span>存储媒体</span></strong><span>:    </span><strong><span>存放</span></strong><span>感觉媒体数字化后的代码的媒体 如 磁带、光盘</span></p></li><li><p><strong><span>传输媒体</span></strong><span>:   </span><strong><span>传输</span></strong><span>信息的物理设备，如电话线、电缆</span></p><p>&nbsp;</p></li></ul><h3><a name="多媒体技术特点" class="md-header-anchor"></a><span>多媒体技术特点</span></h3><ol><li><span>	</span><span>交互性</span></li><li><span>	</span><span>多样性</span></li><li><span>	</span><span>集成性</span></li><li><span>	</span><span>实时性</span></li></ol><h3><a name="多媒体技术中的媒体元素" class="md-header-anchor"></a><span>多媒体技术中的媒体元素</span></h3><p><span>多媒体技术处理的媒体元素主要包括</span><mark><strong><span>文本、图像、动画、声音和视频影像</span></strong></mark><span>五类信息。</span></p><h3><a name="多媒体计算机硬件系统" class="md-header-anchor"></a><span>多媒体计算机硬件系统</span></h3><p><span>光盘驱动器</span>
+<span>声卡</span>
+<span>视频卡</span>
+<span>交互控制接口</span></p><h3><a name="多媒体计算机软件系统" class="md-header-anchor"></a><span>多媒体计算机软件系统</span></h3><p><span>多媒体操作系统</span>
+<span>多媒体创作工具</span>
+<span>多媒体素材编辑软件</span>
+<span>多媒体应用软件</span></p><h3><a name="常用多媒体处理软件" class="md-header-anchor"></a><span>常用多媒体处理软件</span></h3><h4><a name="图像处理" class="md-header-anchor"></a><span>图像处理</span></h4><p><span>	</span><span>图形图像区别</span></p><p><span>			</span><span>图形称</span><strong><span>矢量图形</span></strong><span>或几何图形，用数学方法来表示图形。</span><strong><span>放大后不失真</span></strong><span>，所占存储空间</span><strong><span>小</span></strong><span>。</span></p><p><span>			</span><span>图像又称</span><strong><span>点阵图</span></strong><span>像或</span><strong><span>位图</span></strong><span>图像，是空间和亮度上已经离散化的图像。是一个矩形，矩形中的任一元素都对应图像上的一个点，每个点都有它的灰度或颜色等级。放大后</span><strong><span>失真</span></strong><span>，所占存储空间</span><strong><span>大</span></strong><span>。</span></p><p><mark><strong><span>图像文件的字节数= 图像分辨率 * 颜色深度 / 8</span></strong></mark></p><p><span>1字节(Byte） =  8位(bit)</span></p><h4><a name="图像的文件格式" class="md-header-anchor"></a><span>图像的文件格式</span></h4><p><span>①BMP格式</span></p><p><span>②GIF格式</span>
+<span>③JPEG格式   JPEG静态图像压缩编码标准</span>
+<span>④JPG格式</span>
+<span>图像处理软件</span>
+<span>①ACDSee</span>
+<span>②3DS MAX</span>
+<span>③AutoCAD</span>
+<span>④Maya</span>
+<span>⑤Flash</span>
+<span>⑥Photoshop</span></p><h4><a name="音频信息处理" class="md-header-anchor"></a><span>音频信息处理</span></h4><p><span>周期T: 重复出现的时间间隔;</span>
+<span>振幅A: 波形相对基线的最大位移，表示音量的</span>
+<span>大小;</span>
+<span>频率f: 信号每秒钟变化的次数，即1/T，以赫兹</span>
+<span>(Hz)为单位</span></p><h4><a name="声音数字化" class="md-header-anchor"></a><span>声音数字化</span></h4><p><span>把</span><strong><span>模拟</span></strong><span>声音信号</span><strong><span>转</span></strong><span>变为</span><strong><span>数字</span></strong><span>声音信号的过程称为声音的</span><strong><span>数字化</span></strong><span>。</span></p><p><span>采样---&gt;量化---&gt;编码</span></p><h4><a name="音频格式" class="md-header-anchor"></a><span>音频格式</span></h4><p><span>音频的文件格式</span>
+<span>①WAV格式</span>
+<span>②MP3格式</span>
+<span>③WMA格式</span></p><h4><a name="音频处理软件" class="md-header-anchor"></a><span>音频处理软件</span></h4><p><span>音频处理软件</span>
+<span>①Windows 自带的“录音机</span>
+<span>②GoldWave</span>
+<span>③Audio Converter</span>
+<span>④Sound Forge</span>
+<span>⑤Audition</span></p><p>&nbsp;</p><h4><a name="视频处理" class="md-header-anchor"></a><span>视频处理</span></h4><p><span>视频的文件格式</span>
+<span>①AVI格式</span>
+<span>②MPEG格式</span>
+<span>③RM格式</span>
+<span>④MOV格式</span></p><h4><a name="视频处理软件" class="md-header-anchor"></a><span>视频处理软件</span></h4><p><span>①Windows Movie Maker</span>
+<span>②Adobe Premiere </span></p><h3><a name="数字多媒体技术应用" class="md-header-anchor"></a><span>数字多媒体技术应用</span></h3><p><span>虚拟现实 </span><strong><span>VR</span></strong></p><h4><a name="流媒体-特点" class="md-header-anchor"></a><span>流媒体 特点</span></h4><ol start='' ><li><span>连续性</span></li><li><span>实时性</span></li><li><span>时序性</span></li></ol><h2><a name="信息安全" class="md-header-anchor"></a><span>信息安全</span></h2><p><span>信息安全包括四大要素 技术、制度、流程和人。</span></p><p><span>可能面临的威胁和风险</span></p><p><span>	</span><span>人为威胁: 人为攻击 结构隐患  软件漏洞  安全缺陷</span></p><p><span>	</span><span>自然威胁 :  . .. . . . . . . . . .</span></p><h3><a name="密码技术-" class="md-header-anchor"></a><span>密码技术 :</span></h3><p><span>		</span><strong><span>没有加密</span></strong><span>的消息称为</span><strong><span>明文</span></strong><span>，</span><strong><span>加密后</span></strong><span>称为</span><strong><span>密文</span></strong><span>;  密文恢复到明文，合法的接受者称为解密，非法接受者称为破译;明文加密用的规则称为加密算法，密文解密的规则称为解密算法。</span></p><p><span>		</span><span>加密密钥和解密密钥相同 是单钥 ,反之双钥</span></p><h3><a name="计算机病毒" class="md-header-anchor"></a><span>计算机病毒</span></h3><p><span>	</span><span>是指</span><strong><span>编制</span></strong><span>或者在计算机程序中</span><strong><span>插入</span></strong><span>的破坏计算机功能或者</span><strong><span>毁坏数据</span></strong><span>，</span><strong><span>影响计算机使用</span></strong><span>，并能</span><strong><span>自我复制</span></strong><span>的一组计算机</span><strong><span>指令</span></strong><span>或者</span><strong><span>程序</span></strong><span>代码。</span></p><h3><a name="病毒特性" class="md-header-anchor"></a><span>病毒特性</span></h3><p><span>	</span><span>可执行性 ( 无逻辑错误 )</span></p><p><span>	</span><span>抗反病毒软件性</span>
+<span>	</span><span>破坏性</span>
+<span>	</span><span>衍生性</span>
+<span>	</span><span>传染性</span>
+<span>	</span><span>针对性</span>
+<span>	</span><span>潜伏性</span></p><h3><a name="病毒分类" class="md-header-anchor"></a><span>病毒分类</span></h3><p><span>		</span><span>按照计算机病毒</span><strong><span>存在的媒体</span></strong><span>进行分类</span>
+<span>可以划分为网络病毒、文件病毒  和  引导型病毒。</span>
+<span>		</span><span>按照计算机病毒</span><strong><span>传染的方法</span></strong><span>进行分类</span>
+<span>可分为   驻留型病毒  和   非驻留型病毒</span>
+<span>		</span><span>按照计算机病毒的</span><strong><span>破坏能力</span></strong><span>进行分类</span>
+<span>无害型  无危险型   危险型  非常危险型</span>
+<span>		</span><span>按照计算机病毒</span><strong><span>特有的算法</span></strong><span>进行分类</span>
+<span>伴随型病毒  寄生型病</span><span>	</span><span>蠕虫型病毒</span></p><h3><a name="预防病毒" class="md-header-anchor"></a><span>预防病毒</span></h3><p><span>应该从管理和技术两方面进行。</span></p><h3><a name="防火墙" class="md-header-anchor"></a><span>防火墙</span></h3><p><span>是用于</span><strong><span>内网 LAN</span></strong><span>和</span><strong><span>外网 WAN</span></strong><span> 之间的安全屏障，是</span>
+<span>一种</span><strong><span>被动</span></strong><span>防御技术，防止未授权用户访问。</span></p><h4><a name="防火墙类型" class="md-header-anchor"></a><span>防火墙类型</span></h4><p><span>网络层防火墙    应用层防火墙    链路层防火墙</span><span>		</span></p><h4><a name="防火墙的优缺点" class="md-header-anchor"></a><span>防火墙的优缺点</span></h4><p><span>优点:</span><span>	</span><span>强化安全策略;记录Internet 活动;限制暴露用户点;是</span><strong><span>安全策略检查站</span></strong><span>。</span>
+<span>缺点:</span><span>	</span><span>无法防范恶意知情者:不能防范不经由防火墙的攻击;</span><mark><span>不能防备全部威胁;不能防范病毒</span></mark><span>。</span></p></div>
+</body>
+</html>
